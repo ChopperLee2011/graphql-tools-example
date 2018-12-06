@@ -1,0 +1,21 @@
+{
+  "name": "graphql-tools-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "docker:start": "bash ./docker/start.sh",
+    "build": "tsc",
+    "start": "node ./dist/remote-add-top-level/index.js"
+  },
+  "dependencies": {
+    "apollo-link-http": "^1.5.7",
+    "apollo-server": "^2.2.6",
+    "graphql": "^14.0.2",
+    "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.0.3",
+    "@types/node-fetch": "^2.1.4"
+  }
+}

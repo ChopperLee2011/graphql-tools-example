@@ -1,0 +1,8 @@
+type Query {
+  person(id:String): Person
+}
+
+type Person {
+  name: String @fake(type: firstName)
+  gender: String @examples(values: ["male", "female"])
+}
