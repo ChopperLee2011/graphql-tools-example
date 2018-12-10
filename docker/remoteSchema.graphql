@@ -1,8 +1,10 @@
 type Query {
   person(id:String): Person
+  persons(teamId:String):[Person]
 }
 
 type Person {
   name: String @fake(type: firstName)
   gender: String @examples(values: ["male", "female"])
+  teamId: String @examples(values: ["1"])
 }

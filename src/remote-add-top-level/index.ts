@@ -1,5 +1,5 @@
 import {ApolloServer, gql} from 'apollo-server'
-import getRemoteSchemas from './remote-schema'
+import getRemoteSchemas from '../utils/remote-schema'
 import { GraphQLSchema,printSchema,execute,DocumentNode } from 'graphql';
 
 
