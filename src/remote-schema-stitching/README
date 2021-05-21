@@ -1,0 +1,51 @@
+# Graphql: remote schema intro
+#share
+
+Agenda
+ - What is Graphql remote schemas
+ - How to create a remote schema
+ - How to do remote schema stitching
+
+
+
+
+
+> It can be valuable to be able to treat remote GraphQL endpoints as if they were local executable schemas. This is especially useful for  [schema stitching](https://www.graphql-tools.com/docs/stitch-api/) , but there may be other use cases. 
+https://www.graphql-tools.com/docs/remote-schemas
+
+
+
+
+```
+“”””””””””””””””””                         """"""""""""""""""
+ person-gql:3001                             team-gql:30002
+“””””””””””””””””””                        """""""""""""""""""
+      |                                             |
+      |                                             |
+       -------------> api-gateway:4000  <------------            
+```                        
+
+
+
+
+```
+
+""""""""""""""
+remote schemas  --------------------------------           
+""""""""""""""                                  |
+                                                |
+                                                |
+""""""""""""""                                  |
+linkTypeDefs   ----------------------------------          
+""""""""""""""                                  |
+                                                | ---> gateway
+                                                |
+""""""""""""""""""""""""""""                    |
+resolves                     --------------------          
+with delegateToSchema method
+""""""""""""""""""""""""""""
+```
+
+
+
+**tip** test, fragment
