@@ -1,10 +1,6 @@
 # Graphql: remote schema intro
 #share
 
-Agenda
- - What is Graphql remote schemas
- - How to create a remote schema
- - How to do remote schema stitching
 
 
 
@@ -17,11 +13,11 @@ https://www.graphql-tools.com/docs/remote-schemas
 
 
 ```
-“”””””””””””””””””                         """"""""""""""""""
- person-gql:3001                             team-gql:30002
-“””””””””””””””””””                        """""""""""""""""""
-      |                                             |
-      |                                             |
+""""""""""""""""""                         """"""""""""""""""
+ person-gql:3001                             team-gql:3002
+""""""""""""""""""                         """""""""""""""""""
+      |                                                                     |
+      |                                                                     |
        -------------> api-gateway:4000  <------------            
 ```                        
 
@@ -46,6 +42,9 @@ with delegateToSchema method
 """"""""""""""""""""""""""""
 ```
 
-
+## how to run:
+1. make sure you build the dist files:  `npm run build`
+2. start "microservice API": `node dist/remote-schema-stitching/team.js` and `node dist/remote-schema-stitching/person.js`
+3. start API-gateway: `node node dist/remote-schema-stitching/index.js`
 
 **tip** test, fragment

@@ -24,7 +24,11 @@ async function startServer(): Promise<any> {
   const resolvers = {
     Query: {
       persons: (root: any, args: any, context: any, info: any) => {
-        return persons.filter(p => p.teamId === args.teamId);
+        if (args.teamId) {
+          return persons.filter(p => p.teamId === args.teamId);
+        } else {
+          return persons;
+        }
       },
       person: (root: any, args: any, context: any, info: any) => {
           return persons.find(p => p.id === args.id);
